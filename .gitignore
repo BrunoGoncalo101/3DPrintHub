@@ -22,3 +22,9 @@ uploads/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Front-end (React/Vite)
+node_modules/
+dist/
+.vite/
+npm-debug.log*
