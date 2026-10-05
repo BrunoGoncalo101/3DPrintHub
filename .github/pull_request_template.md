@@ -1,6 +1,11 @@
 ## O que muda
 <!-- Resumo em 1-3 linhas -->
 
+## Parte do projeto
+- [ ] backend
+- [ ] frontend
+- [ ] docs
+
 ## Tarefa do quadro
 <!-- Ex.: Closes #12 -->
 

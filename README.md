@@ -1,45 +1,19 @@
-# Loja de Impressão 3D: Back-end
+# 3DPrintHub
 
-API REST da loja online de impressão 3D (Java 21, Spring Boot 3, MySQL na Aiven, Flyway).
+Loja online de impressão 3D: o cliente compra modelos do catálogo ou envia o seu próprio ficheiro (.stl, .3mf, .obj); nós orçamentamos, imprimimos e enviamos.
 
-## Requisitos
-- Java 21 (ou 17, conforme as aulas; ajustar `java.version` no `pom.xml`)
-- Maven
-- Acesso à base de dados Aiven (pedir as credenciais ao B, em privado)
+## Estrutura do repositório
+| Pasta | Conteúdo | Equipa |
+|---|---|---|
+| `backend/` | API REST em Java 21, Spring Boot 3, MySQL (Aiven) e Flyway | Grupo 2 |
+| `frontend/` | Site em React + Vite | Grupo 1 |
+| `docs/` | Atas, diagramas e relatório | Ambas |
 
-## Como arrancar
-1. Clonar o repositório.
-2. Copiar `.env.example` para `.env` e preencher `DB_URL`, `DB_USER`, `DB_PASSWORD` e `JWT_SECRET`.
-3. Correr:
-   ```bash
-   mvn spring-boot:run
-   ```
-4. A API fica em `http://localhost:8080`.
+Cada pasta tem o seu README com as instruções para arrancar.
 
-> O `.env` está no `.gitignore`. Nunca fazer commit de passwords ou chaves.
-
-## Base de dados
-- Só se altera por migrações Flyway em `src/main/resources/db/migration` (`V1__...`, `V2__...`).
-- Uma migração já aplicada nunca se edita: cria-se uma nova.
-- O Hibernate está em `ddl-auto=validate`: não altera tabelas.
-- Os ficheiros 3D ficam na pasta `uploads/`, não na base de dados.
-
-## Estrutura (`pt.loja3d`)
-`controller` → `service` → `repository`, mais `model`, `dto`, `config` e `exception`.
-
-## Regras de trabalho
+## Regras comuns
 - Nunca trabalhar diretamente na `main`: uma branch por tarefa (`feature/login-jwt`, `fix/upload-tamanho`).
 - Commits: `feat:`, `fix:`, `docs:` + frase curta no presente.
-- Pull request com 1 aprovação, ligado à tarefa do quadro e com "como testar".
-- Erros da API num único formato JSON: `{"erro": "mensagem", "codigo": 400}`.
-- Endpoints no plural, em português, sem verbos no caminho.
-
-## Equipa
-| Pessoa | Módulo | Nome |
-|---|---|---|
-| A | Utilizadores e segurança + DevOps | |
-| B | Catálogo + DBA | |
-| C | Ficheiros 3D e orçamentos + QA | |
-| D | Encomendas e pagamentos + Docs API | |
-
-teste
+- Pull request com 1 aprovação de outra pessoa, ligado à tarefa do quadro e com "como testar".
+- Nunca fazer commit de passwords ou chaves (`.env` está no `.gitignore`).
+- Qualquer mudança a um endpoint é avisada à outra equipa antes de entrar na `main`.
