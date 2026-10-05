@@ -41,3 +41,5 @@ API REST da loja online de impressão 3D (Java 21, Spring Boot 3, MySQL na Aiven
 | B | Catálogo + DBA | |
 | C | Ficheiros 3D e orçamentos + QA | |
 | D | Encomendas e pagamentos + Docs API | |
+
+teste
