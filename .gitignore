@@ -1,0 +1,24 @@
+# Segredos
+.env
+application-local.properties
+
+# Maven / Java
+target/
+*.class
+*.log
+
+# Ficheiros 3D enviados
+uploads/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+.factorypath
+
+# Sistema
+.DS_Store
+Thumbs.db
